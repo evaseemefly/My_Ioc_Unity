@@ -11,11 +11,16 @@ namespace My_Ioc
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
             //var regionFormat = ConfigUnity<IRegionFormat>("defaultContainer");
 
             var regionFormat = ServiceLocator.Instance.GetService<IRegionFormat>();
+
+            var person = ServiceLocator.Instance.GetService<IPerson>();
+            person.SayHello();
 
             WirteFormat(regionFormat);
             Console.ReadLine();
